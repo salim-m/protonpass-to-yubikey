@@ -16,9 +16,6 @@ with open("data.json") as data:
         result[name] = [item["data"]["content"]["totpUri"] for item in items if item["state"] == 1 and "totpUri" in item["data"]["content"] and item["data"]["content"]["totpUri"]]
 
 
-device, info = list_all_devices()[0]
-
-
 for device, info in list_all_devices():
     print(f"Found YubiKey with serial number: {info.serial} ... Running ... \n")
 
